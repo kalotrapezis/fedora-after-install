@@ -7,4 +7,4 @@ Keep the saved_settings.dconf file in a safe place so you can use it after you u
 From the terminal, execute the following to restore your gnome settings:
 
 cd ~
-dconf load / < saved_settings.dconf
+dconf load -f / < saved_settings.dconf

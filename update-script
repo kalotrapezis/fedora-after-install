@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+    echo "password" | sudo -S sudo dnf update -yy && sudo dnf upgrade -yy && sudo flatpak update -y
+    echo "please restart when possible to apply"
+    sleep 2s
+    echo "going out in 3 seconds"
+    sleep 1s
+    echo "2 seconds"
+    sleep 1s
+    echo "1 second"
+    sleep 1s
+    exit
+    exit   
+#create a shortcut with this command --> gnome-terminal -e "path/to/file^" 

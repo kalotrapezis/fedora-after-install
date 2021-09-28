@@ -1,0 +1,10 @@
+From the terminal, execute the following to save your gnome settings:
+
+cd ~
+dconf dump / > saved_settings.dconf
+Keep the saved_settings.dconf file in a safe place so you can use it after you upgrade.
+
+From the terminal, execute the following to restore your gnome settings:
+
+cd ~
+dconf load / < saved_settings.dconf

@@ -1,0 +1,32 @@
+#!/bin/bash
+sudo gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+sudo nano /etc/dnf/dnf.conf
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo dnf upgrade -yy
+sudo dnf install wine -yy
+sudo dnf install openssl
+flatpak install flathub org.gnome.Geary
+flatpak install flathub org.gnome.Calendar
+flatpak install flathub org.gnome.Weather
+flatpak install flathub com.viber.Viber
+flatpak install flathub com.stremio.Stremio
+flatpak install flathub com.valvesoftware.Steam
+flatpak install flathub org.gnome.Totem
+flatpak install flathub de.haeckerfelix.Fragments
+flatpak install flathub org.gnome.Contacts
+flatpak install flathub org.gnome.clocks
+flatpak install flathub org.gnome.Maps
+flatpak install flathub org.gnome.Epiphany
+flatpak install flathub com.github.maoschanz.drawing
+flatpak install flathub com.belmoussaoui.Authenticator
+flatpak install flathub org.gnome.World.PikaBackup
+flatpak install flathub com.github.johnfactotum.Foliate
+flatpak install flathub nz.mega.MEGAsync
+flatpak install flathub com.belmoussaoui.Decoder
+flatpak install flathub dev.geopjr.Hashbrown
+flatpak install flathub fr.romainvigier.MetadataCleaner
+flatpak install flathub org.gnome.Music
+flatpak install flathub org.gnome.Podcasts
+flatpak install flathub org.gnome.Documents
+flatpak install flathub de.haeckerfelix.Shortwave
+

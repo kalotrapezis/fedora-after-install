@@ -1,0 +1,24 @@
+#!/bin/bash
+# konsole -e "command && exit"
+progress=$(kdialog --title "Automatic updates" --progressbar "System and Applications update in progress... <br><br> Don't close the Window if you like :) <br><br> Restart to apply changes " 2);
+kdialog --passivepopup 'Updating System & Applications' 5
+rpm-ostree update
+if [ $? == 0 ]; then
+        qdbus $progress Set "" value 1 > /dev/null;
+        flatpak update --assumeyes
+    else
+        qdbus $progress Set "" value 4 > /dev/null;
+        kdialog --sorry "Some stupid thing <br> failed the System update";
+        qdbus $progress close > /dev/null;
+fi
+
+if [ $? == 0 ];
+    then
+        qdbus $progress Set "" value 2 > /dev/null;
+        qdbus $progress close > /dev/null;
+        kdialog --passivepopup 'Update complete' 3
+    else
+        qdbus $progress Set "" value 4 > /dev/null;
+        kdialog --sorry "Some stupid thing <br> failed the update of apps";
+        qdbus $progress close > /dev/null;
+fi
